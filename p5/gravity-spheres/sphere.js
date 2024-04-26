@@ -22,21 +22,4 @@ class Sphere {
 
         circle(newXPosition, newYPosition, this.radius);
     }
-
-    joinParticles(particles) {
-        particles.forEach(element => {
-            if (this.color !== element.color) {
-                return;
-            }
-
-            let distance = dist(this.xPosition, this.yPosition, element.xPosition, element.yPosition);
-
-            if(distance < 85) {
-                stroke(this.color);
-
-                // There's a dot rendered in the middle of the frame becauase they all start at x = 0, y = 0
-                // line(this.xPosition, this.yPosition, element.xPosition, element.yPosition);
-          }
-        });
-      }
 }

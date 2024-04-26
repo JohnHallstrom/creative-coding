@@ -20,31 +20,14 @@ function setup() {
         const color = spherePalette[colorNumber];
         spheres.push(new Sphere(0, 0, sphereSize, color))
     }
-
-    // Initialize a field of stars
-    // const particleDensity = 50;
-    // const particleSpacing = windowWidth / particleDensity;
-
-    // for (let x = 0; x < windowWidth; x += particleSpacing) {
-    //     for (let y = 0; y < windowHeight; y += particleSpacing) {
-    //         const p = createVector(x, y);
-    //         particles.push(p);
-    //     }
-    // }
 }
 
 function draw() {
     background(backgroundColor);
-    
-    // Render a field of stars
-    // for (let p = 0; p < particles.length; p++) {
-    //     ellipse(particles[p].x, particles[p].y, 2);
-    // }
 
     translate(xCenter, yCenter);
     
     for (let s = 0; s < spheres.length; s++) {
         spheres[s].update();
-        spheres[s].joinParticles(spheres.slice(s));
     }
 }
